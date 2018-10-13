@@ -23,6 +23,10 @@
     "jquery": "^3.1.1",
     "mongoose": "^4.8.6",
     "mysql": "^2.13.0",
+    "nodemon": "^1.18.4",
+    "passport": "^0.4.0",
+    "passport-spotify": "^1.0.1",
+    "querystring": "^0.2.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
   }
