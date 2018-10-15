@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Artists = ({artists}) => {
-    // console.log('artists Data', artists);
     if (artists){
         const {items} = artists;
         
@@ -10,7 +9,6 @@ const Artists = ({artists}) => {
         items.forEach(artist => {averagePopularityArtists += artist.popularity});
         averagePopularityArtists = averagePopularityArtists / items.length
         
-        // console.log(averagePopularityArtists);
 
         const artistsToRender = items.map((track, index) =>
             <li key={index}>

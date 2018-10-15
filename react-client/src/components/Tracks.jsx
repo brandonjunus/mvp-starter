@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Link, Switch} from "react-router-dom";
 
 const Tracks = ({tracks}) => {
     // console.log('Track Data', tracks);
@@ -26,6 +27,7 @@ const Tracks = ({tracks}) => {
                         {tracksToRender} 
                     </ol>    
                 </div>
+                <Link to="/artists">Visit artists</Link>
             </div>
         );
     }
