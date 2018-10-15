@@ -1,11 +1,10 @@
 import React from 'react';
 
 const Tracks = ({tracks}) => {
-    console.log('Track Data', tracks);
+    // console.log('Track Data', tracks);
     if (tracks){
         const {items} = tracks;
 
-        
         // is there some way to make this algorithm better? 
         let averagePopularityTracks = 0
         items.forEach(track => {averagePopularityTracks += track.popularity});

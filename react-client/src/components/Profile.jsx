@@ -1,10 +1,8 @@
 import React from 'react';
 
 const Profile = ({profile}) => {
-    console.log('profile data', profile);
     if (profile){
         const {display_name, email, id, href} = profile
-        
         return (
         <div>
             <div>You are:</div>

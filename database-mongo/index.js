@@ -1,31 +1,39 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/test');
+mongoose.connect('mongodb://localhost/hipsterfy');
 
 var db = mongoose.connection;
 
-db.on('error', function() {
+db.on('error', () => {
   console.log('mongoose connection error');
 });
 
-db.once('open', function() {
-  console.log('mongoose connected successfully');
+var userSchema = mongoose.Schema({
+  id: String,
+  profile: String,
+  topTracks: String,
+  topArtists: String
 });
 
-var itemSchema = mongoose.Schema({
-  quantity: Number,
-  description: String
-});
+var User = mongoose.model('User', userSchema);
 
-var Item = mongoose.model('Item', itemSchema);
+const addUser = (body, callback) => {
+  console.log('body', body.id);
+  const userData = {
+    id: body.id,
+    profile: body.profile,
+    topTracks: body.tracks,
+    topArtists: body.artists,
+  }
+  let CurrentUser = new User(userData)
 
-var selectAll = function(callback) {
-  Item.find({}, function(err, items) {
-    if(err) {
-      callback(err, null);
-    } else {
-      callback(null, items);
-    }
-  });
-};
 
-module.exports.selectAll = selectAll;
+  User.findOneAndUpdate({id: body.id}, userData, {upsert: true}, (err, user) => {
+    if (err) throw err;
+    console.log('inserted user', user)
+    callback()
+  })
+}
+
+module.exports = {
+  addUser: addUser
+}
