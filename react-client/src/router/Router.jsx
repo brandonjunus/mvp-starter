@@ -6,6 +6,7 @@ import Landing from '../components/Landing.jsx';
 import Profile from '../components/Profile.jsx';
 import Tracks from '../components/Tracks.jsx';
 import Artists from '../components/Artists.jsx';
+import ArtistsAndTracks from '../components/ArtistsAndTracks.jsx';
 
 class HipsterfyRouter extends React.Component {
   constructor(props) {
@@ -118,14 +119,15 @@ class HipsterfyRouter extends React.Component {
     return (
     <Router>
         <div>
-          <Link to="/landing">Visit landing</Link>
+          <Link to="/landing">Visit landing |</Link>
+          <Link to="/artistsandtracks">Visit Artist and Tracks Page  |</Link>
           <Link to="/tracks">Visit tracks</Link>
-          <Link to="/artists">Visit artists</Link>
-          <Link to="/profile">Visit profile</Link>
+          {/* <Link to="/artists">Visit artists</Link> */}
+          {/* <Link to="/profile">Visit profile</Link> */}
           <hr />
-          {/* <Landing tracksAveragePopularity={this.state.tracksAveragePopularity} artistsAveragePopularity={this.state.artistsAveragePopularity}/> */}
             <Switch>
-                <Route path="/landing" render={() => <Landing tracksAveragePopularity={this.state.tracksAveragePopularity} artistsAveragePopularity={this.state.artistsAveragePopularity}/>} />
+                <Route path="/landing" render={() => <Landing tracksAveragePopularity={this.state.tracksAveragePopularity} artistsAveragePopularity={this.state.artistsAveragePopularity} profile={this.state.profile}/>}  />
+                <Route path="/artistsandtracks" render={() => <ArtistsAndTracks tracks={this.state.tracks} artists={this.state.artists} profile={this.state.profile} tracksAveragePopularity={this.state.tracksAveragePopularity} artistsAveragePopularity={this.state.artistsAveragePopularity}/>} />
                 <Route path="/tracks" render={() => <Tracks tracks={this.state.tracks}/>} />
                 <Route path="/artists" render={() => <Artists artists={this.state.artists} />} />
                 <Route path="/profile" render={() => <Profile profile={this.state.profile} />} />
