@@ -3,7 +3,6 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Link, Switch} from "react-router-dom";
 
 const Border = styled.div`
-    border-style : solid;
     display: flex;
 `
 
@@ -89,7 +88,7 @@ const ArtistsAndTracks = (props) => {
                     </div>
                 </Artists>
                 <Tracks>
-                    Your Hipster Level based on Tracks: {100 - artistsAveragePopularity}
+                    Your Hipster Level based on Tracks: {100 - tracksAveragePopularity}
                     <div>
                         Your Top Tracks
                         <ul>

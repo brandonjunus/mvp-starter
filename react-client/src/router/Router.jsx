@@ -8,6 +8,8 @@ import Tracks from '../components/Tracks.jsx';
 import Artists from '../components/Artists.jsx';
 import ArtistsAndTracks from '../components/ArtistsAndTracks.jsx';
 
+import Chart from '../components/BarChartMain.jsx';
+
 class HipsterfyRouter extends React.Component {
   constructor(props) {
     super(props);
@@ -122,6 +124,7 @@ class HipsterfyRouter extends React.Component {
           <Link to="/landing">Visit landing |</Link>
           <Link to="/artistsandtracks">Visit Artist and Tracks Page  |</Link>
           <Link to="/tracks">Visit tracks</Link>
+          <Link to="/chart">Visit chart</Link>
           {/* <Link to="/artists">Visit artists</Link> */}
           {/* <Link to="/profile">Visit profile</Link> */}
           <hr />
@@ -131,6 +134,7 @@ class HipsterfyRouter extends React.Component {
                 <Route path="/tracks" render={() => <Tracks tracks={this.state.tracks}/>} />
                 <Route path="/artists" render={() => <Artists artists={this.state.artists} />} />
                 <Route path="/profile" render={() => <Profile profile={this.state.profile} />} />
+                <Route path="/chart" render={() => <Chart tracks={this.state.tracks}/>} />
             </Switch>
         </div>
     </Router>

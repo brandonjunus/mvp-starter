@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Link, Switch} from "react-router-dom";
 
 const LandingPageContainer = styled.div`
     width: 100%;
-    border-style: solid;
+    // border-style: solid;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -28,7 +28,7 @@ const YourHipsterSlogan = styled.div`
 
 const Border = styled.div`
     position: relative; 
-    border-style : solid;
+    // border-style : solid;
     text-align: right;
     display: block;
     width: 80%;
